@@ -1,0 +1,1376 @@
+[0m10:41:16.892919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED735DF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED735CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED735BE0>]}
+
+
+============================== 10:41:16.899352 | 42939ced-7ed7-48d8-9f22-53145aa52af6 ==============================
+[0m10:41:16.899352 [info ] [MainThread]: Running with dbt=1.7.9
+[0m10:41:16.899352 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:41:17.139863 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EC5D80E0>]}
+[0m10:41:17.222597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED83E570>]}
+[0m10:41:17.227572 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m10:41:17.243870 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m10:41:17.244870 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:41:17.245841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED83C470>]}
+[0m10:41:18.799837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EDF880B0>]}
+[0m10:41:18.816438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EDF564B0>]}
+[0m10:41:18.817466 [info ] [MainThread]: Found 2 models, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m10:41:18.817466 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED502540>]}
+[0m10:41:18.819014 [info ] [MainThread]: 
+[0m10:41:18.820610 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m10:41:18.821559 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m10:41:18.830157 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m10:41:18.830850 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m10:41:18.830850 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:41:18.931833 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.0 seconds
+[0m10:41:18.932833 [debug] [ThreadPool]: On list_schemas: Close
+[0m10:41:18.935081 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m10:41:18.939165 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m10:41:18.940194 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m10:41:18.940194 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:41:18.946104 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:18.946104 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m10:41:18.946104 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m10:41:18.949007 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m10:41:18.949554 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m10:41:18.950581 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m10:41:18.953249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EDF88B30>]}
+[0m10:41:18.953249 [debug] [MainThread]: Using mysql connection "master"
+[0m10:41:18.954243 [debug] [MainThread]: On master: BEGIN
+[0m10:41:18.954243 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:41:18.959330 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:18.959330 [debug] [MainThread]: On master: COMMIT
+[0m10:41:18.959330 [debug] [MainThread]: Using mysql connection "master"
+[0m10:41:18.960359 [debug] [MainThread]: On master: COMMIT
+[0m10:41:18.961078 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:18.961078 [debug] [MainThread]: On master: Close
+[0m10:41:18.961688 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:41:18.962615 [info ] [MainThread]: 
+[0m10:41:18.965614 [debug] [Thread-1 (]: Began running node model.db_quest.stg_customers
+[0m10:41:18.966688 [info ] [Thread-1 (]: 1 of 2 START sql view model my_dbt_db.stg_customers ............................ [RUN]
+[0m10:41:18.967615 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.db_quest.stg_customers'
+[0m10:41:18.967615 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_customers
+[0m10:41:18.973634 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_customers"
+[0m10:41:18.974635 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (compile): 10:41:18.967615 => 10:41:18.974635
+[0m10:41:18.975663 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_customers
+[0m10:41:19.012008 [debug] [Thread-1 (]: Writing runtime sql for node "model.db_quest.stg_customers"
+[0m10:41:19.015008 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.016009 [debug] [Thread-1 (]: On model.db_quest.stg_customers: BEGIN
+[0m10:41:19.017010 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:41:19.024219 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.024219 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.024219 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+  create view `my_dbt_db`.`stg_customers__dbt_tmp`
+    
+    
+  as (
+    with source as (
+    select * from `my_dbt_db`.`raw_customers`
+),
+renamed as (
+    select
+        id as customer_id,
+        name as customer_name
+    from source
+)
+select * from renamed
+  );
+[0m10:41:19.046999 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.053528 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.054527 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    drop view if exists `my_dbt_db`.`stg_customers__dbt_backup` cascade
+  
+[0m10:41:19.057040 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.057040 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.058640 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    rename table `my_dbt_db`.`stg_customers` to `my_dbt_db`.`stg_customers__dbt_backup`
+  
+[0m10:41:19.063863 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.066383 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.067379 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    drop view if exists `my_dbt_db`.`stg_customers` cascade
+  
+[0m10:41:19.069096 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.070741 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.071323 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    rename table `my_dbt_db`.`stg_customers__dbt_tmp` to `my_dbt_db`.`stg_customers`
+  
+[0m10:41:19.075253 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.090866 [debug] [Thread-1 (]: On model.db_quest.stg_customers: COMMIT
+[0m10:41:19.090866 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.090866 [debug] [Thread-1 (]: On model.db_quest.stg_customers: COMMIT
+[0m10:41:19.091815 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.096371 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:41:19.097378 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+drop view if exists `my_dbt_db`.`stg_customers__dbt_backup`
+[0m10:41:19.101760 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.103418 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (execute): 10:41:18.975663 => 10:41:19.102793
+[0m10:41:19.103418 [debug] [Thread-1 (]: On model.db_quest.stg_customers: Close
+[0m10:41:19.104024 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EF0C8860>]}
+[0m10:41:19.104990 [info ] [Thread-1 (]: 1 of 2 OK created sql view model my_dbt_db.stg_customers ....................... [[32mSUCCESS 0[0m in 0.14s]
+[0m10:41:19.105961 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_customers
+[0m10:41:19.105961 [debug] [Thread-1 (]: Began running node model.db_quest.stg_orders
+[0m10:41:19.106962 [info ] [Thread-1 (]: 2 of 2 START sql view model my_dbt_db.stg_orders ............................... [RUN]
+[0m10:41:19.107990 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_customers, now model.db_quest.stg_orders)
+[0m10:41:19.107990 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_orders
+[0m10:41:19.110632 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_orders"
+[0m10:41:19.111263 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (compile): 10:41:19.107990 => 10:41:19.111263
+[0m10:41:19.111263 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_orders
+[0m10:41:19.116511 [debug] [Thread-1 (]: Writing runtime sql for node "model.db_quest.stg_orders"
+[0m10:41:19.117481 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.117481 [debug] [Thread-1 (]: On model.db_quest.stg_orders: BEGIN
+[0m10:41:19.117481 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:41:19.124681 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.124681 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.124681 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+  create view `my_dbt_db`.`stg_orders__dbt_tmp`
+    
+    
+  as (
+    with source as (
+    select * from `my_dbt_db`.`raw_orders`
+),
+renamed as (
+    select
+        id as order_id,
+        customer as customer_id
+    from source
+)
+select * from renamed
+  );
+[0m10:41:19.143322 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.146323 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.147323 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    drop view if exists `my_dbt_db`.`stg_orders__dbt_backup` cascade
+  
+[0m10:41:19.149836 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.151459 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.151531 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    rename table `my_dbt_db`.`stg_orders` to `my_dbt_db`.`stg_orders__dbt_backup`
+  
+[0m10:41:19.156455 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.160216 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.160216 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    drop view if exists `my_dbt_db`.`stg_orders` cascade
+  
+[0m10:41:19.162758 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.163757 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.164274 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    rename table `my_dbt_db`.`stg_orders__dbt_tmp` to `my_dbt_db`.`stg_orders`
+  
+[0m10:41:19.167743 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.169742 [debug] [Thread-1 (]: On model.db_quest.stg_orders: COMMIT
+[0m10:41:19.169742 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.170743 [debug] [Thread-1 (]: On model.db_quest.stg_orders: COMMIT
+[0m10:41:19.170743 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.220804 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:41:19.220804 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+drop view if exists `my_dbt_db`.`stg_orders__dbt_backup`
+[0m10:41:19.224312 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.225313 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (execute): 10:41:19.112186 => 10:41:19.225313
+[0m10:41:19.226312 [debug] [Thread-1 (]: On model.db_quest.stg_orders: Close
+[0m10:41:19.227314 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '42939ced-7ed7-48d8-9f22-53145aa52af6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EF15A570>]}
+[0m10:41:19.227314 [info ] [Thread-1 (]: 2 of 2 OK created sql view model my_dbt_db.stg_orders .......................... [[32mSUCCESS 0[0m in 0.12s]
+[0m10:41:19.228847 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_orders
+[0m10:41:19.229823 [debug] [MainThread]: Using mysql connection "master"
+[0m10:41:19.229823 [debug] [MainThread]: On master: BEGIN
+[0m10:41:19.230823 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:41:19.235337 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.235337 [debug] [MainThread]: On master: COMMIT
+[0m10:41:19.235919 [debug] [MainThread]: Using mysql connection "master"
+[0m10:41:19.235919 [debug] [MainThread]: On master: COMMIT
+[0m10:41:19.236846 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:41:19.236846 [debug] [MainThread]: On master: Close
+[0m10:41:19.237847 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:41:19.237847 [debug] [MainThread]: Connection 'list_schemas' was properly closed.
+[0m10:41:19.237847 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m10:41:19.238847 [debug] [MainThread]: Connection 'model.db_quest.stg_orders' was properly closed.
+[0m10:41:19.238847 [info ] [MainThread]: 
+[0m10:41:19.239359 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.42 seconds (0.42s).
+[0m10:41:19.240357 [debug] [MainThread]: Command end result
+[0m10:41:19.247050 [info ] [MainThread]: 
+[0m10:41:19.247563 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:41:19.248665 [info ] [MainThread]: 
+[0m10:41:19.249179 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:41:19.250204 [debug] [MainThread]: Command `dbt run` succeeded at 10:41:19.249694 after 2.49 seconds
+[0m10:41:19.250204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED5AFD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3ED57DB20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3EF1669C0>]}
+[0m10:41:19.250715 [debug] [MainThread]: Flushing usage events
+[0m10:56:07.334349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF4799D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF479850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF47A150>]}
+
+
+============================== 10:56:07.337512 | 1152f9e0-2fff-4333-a80c-a714abe554f9 ==============================
+[0m10:56:07.337512 [info ] [MainThread]: Running with dbt=1.7.9
+[0m10:56:07.338510 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:56:07.523553 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF478080>]}
+[0m10:56:07.601312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF4AA300>]}
+[0m10:56:07.602879 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m10:56:07.609584 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m10:56:07.682345 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 2 files changed.
+[0m10:56:07.683347 [debug] [MainThread]: Partial parsing: added file: db_quest://tests\relation_via_customer_id.sql
+[0m10:56:07.683887 [debug] [MainThread]: Partial parsing: added file: db_quest://tests\order_dates_in_the_past.sql
+[0m10:56:07.683887 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\stg_customers.yml
+[0m10:56:07.684886 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\stg_orders.yml
+[0m10:56:08.000083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAF0E56060>]}
+[0m10:56:08.009059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAF0B91A90>]}
+[0m10:56:08.010085 [info ] [MainThread]: Found 2 models, 8 tests, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m10:56:08.010085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAF0F23770>]}
+[0m10:56:08.011059 [info ] [MainThread]: 
+[0m10:56:08.012539 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m10:56:08.013563 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m10:56:08.022431 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m10:56:08.022431 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m10:56:08.023430 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:56:08.037610 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.0 seconds
+[0m10:56:08.038585 [debug] [ThreadPool]: On list_schemas: Close
+[0m10:56:08.040585 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m10:56:08.044788 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m10:56:08.044788 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m10:56:08.044788 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:56:08.050258 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.051242 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m10:56:08.051242 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m10:56:08.053243 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m10:56:08.055473 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m10:56:08.055473 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m10:56:08.057947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAF0E00050>]}
+[0m10:56:08.058949 [debug] [MainThread]: Using mysql connection "master"
+[0m10:56:08.058949 [debug] [MainThread]: On master: BEGIN
+[0m10:56:08.058949 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:56:08.064577 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.065483 [debug] [MainThread]: On master: COMMIT
+[0m10:56:08.065483 [debug] [MainThread]: Using mysql connection "master"
+[0m10:56:08.065483 [debug] [MainThread]: On master: COMMIT
+[0m10:56:08.066610 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.066610 [debug] [MainThread]: On master: Close
+[0m10:56:08.067482 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:56:08.068482 [info ] [MainThread]: 
+[0m10:56:08.071483 [debug] [Thread-1 (]: Began running node model.db_quest.stg_customers
+[0m10:56:08.071483 [info ] [Thread-1 (]: 1 of 2 START sql view model my_dbt_db.stg_customers ............................ [RUN]
+[0m10:56:08.073119 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.db_quest.stg_customers'
+[0m10:56:08.073126 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_customers
+[0m10:56:08.079145 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_customers"
+[0m10:56:08.080145 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (compile): 10:56:08.073638 => 10:56:08.080145
+[0m10:56:08.081148 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_customers
+[0m10:56:08.110004 [debug] [Thread-1 (]: Writing runtime sql for node "model.db_quest.stg_customers"
+[0m10:56:08.111033 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.111033 [debug] [Thread-1 (]: On model.db_quest.stg_customers: BEGIN
+[0m10:56:08.111844 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:56:08.116521 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.117545 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.117545 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+  create view `my_dbt_db`.`stg_customers__dbt_tmp`
+    
+    
+  as (
+    with source as (
+    select * from `my_dbt_db`.`raw_customers`
+),
+renamed as (
+    select
+        id as customer_id,
+        name as customer_name
+    from source
+)
+select * from renamed
+  );
+[0m10:56:08.123559 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.129077 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.130105 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    drop view if exists `my_dbt_db`.`stg_customers__dbt_backup` cascade
+  
+[0m10:56:08.131662 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.132671 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.133671 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    rename table `my_dbt_db`.`stg_customers` to `my_dbt_db`.`stg_customers__dbt_backup`
+  
+[0m10:56:08.137723 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.140377 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.141250 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    drop view if exists `my_dbt_db`.`stg_customers` cascade
+  
+[0m10:56:08.143231 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.144232 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.144814 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+
+    rename table `my_dbt_db`.`stg_customers__dbt_tmp` to `my_dbt_db`.`stg_customers`
+  
+[0m10:56:08.148363 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.163445 [debug] [Thread-1 (]: On model.db_quest.stg_customers: COMMIT
+[0m10:56:08.163987 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.164528 [debug] [Thread-1 (]: On model.db_quest.stg_customers: COMMIT
+[0m10:56:08.165098 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.169067 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_customers"
+[0m10:56:08.169067 [debug] [Thread-1 (]: On model.db_quest.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_customers"} */
+drop view if exists `my_dbt_db`.`stg_customers__dbt_backup`
+[0m10:56:08.184404 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.186428 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (execute): 10:56:08.081727 => 10:56:08.185428
+[0m10:56:08.186428 [debug] [Thread-1 (]: On model.db_quest.stg_customers: Close
+[0m10:56:08.187428 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAF0FB32C0>]}
+[0m10:56:08.187428 [info ] [Thread-1 (]: 1 of 2 OK created sql view model my_dbt_db.stg_customers ....................... [[32mSUCCESS 0[0m in 0.11s]
+[0m10:56:08.188434 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_customers
+[0m10:56:08.188434 [debug] [Thread-1 (]: Began running node model.db_quest.stg_orders
+[0m10:56:08.189785 [info ] [Thread-1 (]: 2 of 2 START sql view model my_dbt_db.stg_orders ............................... [RUN]
+[0m10:56:08.189785 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_customers, now model.db_quest.stg_orders)
+[0m10:56:08.190811 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_orders
+[0m10:56:08.193298 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_orders"
+[0m10:56:08.193835 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (compile): 10:56:08.190811 => 10:56:08.193835
+[0m10:56:08.194858 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_orders
+[0m10:56:08.197054 [debug] [Thread-1 (]: Writing runtime sql for node "model.db_quest.stg_orders"
+[0m10:56:08.198534 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.198534 [debug] [Thread-1 (]: On model.db_quest.stg_orders: BEGIN
+[0m10:56:08.199490 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:56:08.204115 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.205445 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.205502 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+  create view `my_dbt_db`.`stg_orders__dbt_tmp`
+    
+    
+  as (
+    with source as (
+    select * from `my_dbt_db`.`raw_orders`
+),
+renamed as (
+    select
+        id as order_id,
+        customer as customer_id
+    from source
+)
+select * from renamed
+  );
+[0m10:56:08.216002 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.218554 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.218554 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    drop view if exists `my_dbt_db`.`stg_orders__dbt_backup` cascade
+  
+[0m10:56:08.222123 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.223081 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.223081 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    rename table `my_dbt_db`.`stg_orders` to `my_dbt_db`.`stg_orders__dbt_backup`
+  
+[0m10:56:08.228282 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.230793 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.230793 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    drop view if exists `my_dbt_db`.`stg_orders` cascade
+  
+[0m10:56:08.232851 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.233805 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.235165 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+
+    rename table `my_dbt_db`.`stg_orders__dbt_tmp` to `my_dbt_db`.`stg_orders`
+  
+[0m10:56:08.239390 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.241597 [debug] [Thread-1 (]: On model.db_quest.stg_orders: COMMIT
+[0m10:56:08.241597 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.241597 [debug] [Thread-1 (]: On model.db_quest.stg_orders: COMMIT
+[0m10:56:08.242596 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.244846 [debug] [Thread-1 (]: Using mysql connection "model.db_quest.stg_orders"
+[0m10:56:08.244846 [debug] [Thread-1 (]: On model.db_quest.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "model.db_quest.stg_orders"} */
+drop view if exists `my_dbt_db`.`stg_orders__dbt_backup`
+[0m10:56:08.249851 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.250853 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (execute): 10:56:08.194858 => 10:56:08.250853
+[0m10:56:08.250853 [debug] [Thread-1 (]: On model.db_quest.stg_orders: Close
+[0m10:56:08.252217 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1152f9e0-2fff-4333-a80c-a714abe554f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAF0FB2ED0>]}
+[0m10:56:08.252217 [info ] [Thread-1 (]: 2 of 2 OK created sql view model my_dbt_db.stg_orders .......................... [[32mSUCCESS 0[0m in 0.06s]
+[0m10:56:08.253158 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_orders
+[0m10:56:08.255037 [debug] [MainThread]: Using mysql connection "master"
+[0m10:56:08.255607 [debug] [MainThread]: On master: BEGIN
+[0m10:56:08.255607 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:56:08.260729 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.260729 [debug] [MainThread]: On master: COMMIT
+[0m10:56:08.261308 [debug] [MainThread]: Using mysql connection "master"
+[0m10:56:08.261308 [debug] [MainThread]: On master: COMMIT
+[0m10:56:08.261869 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:56:08.261869 [debug] [MainThread]: On master: Close
+[0m10:56:08.262817 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:56:08.262817 [debug] [MainThread]: Connection 'list_schemas' was properly closed.
+[0m10:56:08.263816 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m10:56:08.263816 [debug] [MainThread]: Connection 'model.db_quest.stg_orders' was properly closed.
+[0m10:56:08.263816 [info ] [MainThread]: 
+[0m10:56:08.264816 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.25 seconds (0.25s).
+[0m10:56:08.265396 [debug] [MainThread]: Command end result
+[0m10:56:08.272272 [info ] [MainThread]: 
+[0m10:56:08.273272 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:56:08.273272 [info ] [MainThread]: 
+[0m10:56:08.274272 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:56:08.275273 [debug] [MainThread]: Command `dbt run` succeeded at 10:56:08.275273 after 1.06 seconds
+[0m10:56:08.275273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF43E2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF33A3C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAEF339FA0>]}
+[0m10:56:08.276272 [debug] [MainThread]: Flushing usage events
+[0m10:58:48.141224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08D3A8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08D39250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08D38BF0>]}
+
+
+============================== 10:58:48.145365 | 171a6af0-2a78-4293-be64-10de97f1c3ac ==============================
+[0m10:58:48.145365 [info ] [MainThread]: Running with dbt=1.7.9
+[0m10:58:48.146324 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:58:48.331167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '171a6af0-2a78-4293-be64-10de97f1c3ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08D394C0>]}
+[0m10:58:48.409404 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '171a6af0-2a78-4293-be64-10de97f1c3ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08E36690>]}
+[0m10:58:48.410385 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m10:58:48.417384 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m10:58:48.480321 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:58:48.480321 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:58:48.485129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '171a6af0-2a78-4293-be64-10de97f1c3ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B092252E0>]}
+[0m10:58:48.487689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '171a6af0-2a78-4293-be64-10de97f1c3ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B09390B60>]}
+[0m10:58:48.488639 [info ] [MainThread]: Found 2 models, 8 tests, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m10:58:48.488639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '171a6af0-2a78-4293-be64-10de97f1c3ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B09177A40>]}
+[0m10:58:48.490419 [info ] [MainThread]: 
+[0m10:58:48.490959 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m10:58:48.491959 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m10:58:48.500978 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m10:58:48.501972 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m10:58:48.501972 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:58:48.515445 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:58:48.515445 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m10:58:48.516371 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m10:58:48.530912 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m10:58:48.531912 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m10:58:48.531912 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m10:58:48.534227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '171a6af0-2a78-4293-be64-10de97f1c3ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B09177D10>]}
+[0m10:58:48.535751 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:58:48.535751 [info ] [MainThread]: 
+[0m10:58:48.539738 [debug] [Thread-1 (]: Began running node model.db_quest.stg_customers
+[0m10:58:48.539738 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.db_quest.stg_customers'
+[0m10:58:48.540686 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_customers
+[0m10:58:48.546330 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_customers"
+[0m10:58:48.547330 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (compile): 10:58:48.540686 => 10:58:48.547330
+[0m10:58:48.547330 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_customers
+[0m10:58:48.548564 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (execute): 10:58:48.548564 => 10:58:48.548564
+[0m10:58:48.549505 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_customers
+[0m10:58:48.549505 [debug] [Thread-1 (]: Began running node model.db_quest.stg_orders
+[0m10:58:48.550504 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_customers, now model.db_quest.stg_orders)
+[0m10:58:48.550504 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_orders
+[0m10:58:48.553505 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_orders"
+[0m10:58:48.555126 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (compile): 10:58:48.550504 => 10:58:48.554477
+[0m10:58:48.555723 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_orders
+[0m10:58:48.555723 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (execute): 10:58:48.555723 => 10:58:48.555723
+[0m10:58:48.556639 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_orders
+[0m10:58:48.556639 [debug] [Thread-1 (]: Began running node test.db_quest.order_dates_in_the_past
+[0m10:58:48.557668 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_orders, now test.db_quest.order_dates_in_the_past)
+[0m10:58:48.557668 [debug] [Thread-1 (]: Began compiling node test.db_quest.order_dates_in_the_past
+[0m10:58:48.559669 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.order_dates_in_the_past"
+[0m10:58:48.559669 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (compile): 10:58:48.558668 => 10:58:48.559669
+[0m10:58:48.560638 [debug] [Thread-1 (]: Began executing node test.db_quest.order_dates_in_the_past
+[0m10:58:48.561206 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (execute): 10:58:48.560638 => 10:58:48.560638
+[0m10:58:48.562208 [debug] [Thread-1 (]: Finished running node test.db_quest.order_dates_in_the_past
+[0m10:58:48.562208 [debug] [Thread-1 (]: Began running node test.db_quest.relation_via_customer_id
+[0m10:58:48.562881 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.order_dates_in_the_past, now test.db_quest.relation_via_customer_id)
+[0m10:58:48.563486 [debug] [Thread-1 (]: Began compiling node test.db_quest.relation_via_customer_id
+[0m10:58:48.564446 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.relation_via_customer_id"
+[0m10:58:48.564446 [debug] [Thread-1 (]: Timing info for test.db_quest.relation_via_customer_id (compile): 10:58:48.563486 => 10:58:48.564446
+[0m10:58:48.565447 [debug] [Thread-1 (]: Began executing node test.db_quest.relation_via_customer_id
+[0m10:58:48.565447 [debug] [Thread-1 (]: Timing info for test.db_quest.relation_via_customer_id (execute): 10:58:48.565447 => 10:58:48.565447
+[0m10:58:48.566417 [debug] [Thread-1 (]: Finished running node test.db_quest.relation_via_customer_id
+[0m10:58:48.566417 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m10:58:48.567448 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.relation_via_customer_id, now test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m10:58:48.567448 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m10:58:48.579949 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m10:58:48.581922 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (compile): 10:58:48.568418 => 10:58:48.580922
+[0m10:58:48.581922 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m10:58:48.582921 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (execute): 10:58:48.581922 => 10:58:48.581922
+[0m10:58:48.584032 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m10:58:48.584032 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m10:58:48.585056 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.db_quest.not_null_stg_customers_customer_name.5c92a78a60)
+[0m10:58:48.585056 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m10:58:48.588086 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_name.5c92a78a60"
+[0m10:58:48.590062 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (compile): 10:58:48.585056 => 10:58:48.589062
+[0m10:58:48.590062 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m10:58:48.590062 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (execute): 10:58:48.590062 => 10:58:48.590062
+[0m10:58:48.591085 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m10:58:48.592061 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m10:58:48.592625 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_name.5c92a78a60, now test.db_quest.unique_stg_customers_customer_id.c7614daada)
+[0m10:58:48.592625 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m10:58:48.598525 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_customers_customer_id.c7614daada"
+[0m10:58:48.599534 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (compile): 10:58:48.592625 => 10:58:48.598525
+[0m10:58:48.599534 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m10:58:48.599534 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (execute): 10:58:48.599534 => 10:58:48.599534
+[0m10:58:48.600525 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m10:58:48.601533 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m10:58:48.601533 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.unique_stg_customers_customer_id.c7614daada, now test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m10:58:48.601533 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m10:58:48.605901 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m10:58:48.606833 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (compile): 10:58:48.602527 => 10:58:48.606833
+[0m10:58:48.606833 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m10:58:48.607833 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (execute): 10:58:48.606833 => 10:58:48.606833
+[0m10:58:48.607833 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m10:58:48.608858 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m10:58:48.608858 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5, now test.db_quest.not_null_stg_orders_order_id.81cfe2fe64)
+[0m10:58:48.609833 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m10:58:48.612862 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_order_id.81cfe2fe64"
+[0m10:58:48.613861 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (compile): 10:58:48.609833 => 10:58:48.613861
+[0m10:58:48.614862 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m10:58:48.614862 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (execute): 10:58:48.614862 => 10:58:48.614862
+[0m10:58:48.616153 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m10:58:48.616153 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_orders_customer_id.f138e21520
+[0m10:58:48.616153 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_order_id.81cfe2fe64, now test.db_quest.unique_stg_orders_customer_id.f138e21520)
+[0m10:58:48.617153 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_orders_customer_id.f138e21520
+[0m10:58:48.620211 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_orders_customer_id.f138e21520"
+[0m10:58:48.621211 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_customer_id.f138e21520 (compile): 10:58:48.617153 => 10:58:48.621211
+[0m10:58:48.621211 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_orders_customer_id.f138e21520
+[0m10:58:48.622211 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_customer_id.f138e21520 (execute): 10:58:48.622211 => 10:58:48.622211
+[0m10:58:48.623183 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_orders_customer_id.f138e21520
+[0m10:58:48.624183 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:58:48.624183 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m10:58:48.624183 [debug] [MainThread]: Connection 'test.db_quest.unique_stg_orders_customer_id.f138e21520' was properly closed.
+[0m10:58:48.626381 [debug] [MainThread]: Command end result
+[0m10:58:48.820143 [debug] [MainThread]: Acquiring new mysql connection 'generate_catalog'
+[0m10:58:48.820143 [info ] [MainThread]: Building catalog
+[0m10:58:48.822172 [debug] [ThreadPool]: Acquiring new mysql connection 'my_dbt_db'
+[0m10:58:48.823172 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`my_first_dbt_model`
+[0m10:58:48.828259 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.829256 [debug] [ThreadPool]: On my_dbt_db: BEGIN
+[0m10:58:48.829256 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:58:48.834267 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:58:48.834267 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.835297 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.my_first_dbt_model
+    
+[0m10:58:48.837268 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m10:58:48.840681 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`my_second_dbt_model`
+[0m10:58:48.841626 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.842624 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.my_second_dbt_model
+    
+[0m10:58:48.843594 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m10:58:48.845366 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_customers`
+[0m10:58:48.847367 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.847367 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_customers
+    
+[0m10:58:48.849366 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m10:58:48.850394 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_items`
+[0m10:58:48.852391 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.852391 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_items
+    
+[0m10:58:48.853365 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m10:58:48.855394 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_orders`
+[0m10:58:48.857315 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.857315 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_orders
+    
+[0m10:58:48.859290 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.0 seconds
+[0m10:58:48.860314 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_products`
+[0m10:58:48.861314 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.862313 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_products
+    
+[0m10:58:48.863289 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m10:58:48.864922 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_stores`
+[0m10:58:48.866483 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.866483 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_stores
+    
+[0m10:58:48.877076 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.0 seconds
+[0m10:58:48.879076 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_supplies`
+[0m10:58:48.880075 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.881102 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_supplies
+    
+[0m10:58:48.882076 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m10:58:48.883649 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`stg_customers`
+[0m10:58:48.884678 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.884678 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.stg_customers
+    
+[0m10:58:48.887312 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m10:58:48.888312 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`stg_orders`
+[0m10:58:48.890313 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m10:58:48.890313 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.stg_orders
+    
+[0m10:58:48.891847 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m10:58:48.894356 [debug] [ThreadPool]: On my_dbt_db: ROLLBACK
+[0m10:58:48.895354 [debug] [ThreadPool]: On my_dbt_db: Close
+[0m10:58:48.904816 [info ] [MainThread]: Catalog written to C:\Users\benja\WCS\WCS_DBT_quests\db_quest\target\catalog.json
+[0m10:58:48.905790 [debug] [MainThread]: Command `dbt docs generate` succeeded at 10:58:48.905790 after 0.88 seconds
+[0m10:58:48.906729 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m10:58:48.906729 [debug] [MainThread]: Connection 'my_dbt_db' was properly closed.
+[0m10:58:48.907283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08C13470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08AD1FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016B08AD2840>]}
+[0m10:58:48.907283 [debug] [MainThread]: Flushing usage events
+[0m10:59:08.399360 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81DC27A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81DC27560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81DC277D0>]}
+
+
+============================== 10:59:08.403359 | 908e4e8e-7b20-4d6c-a89d-dac40eb54241 ==============================
+[0m10:59:08.403359 [info ] [MainThread]: Running with dbt=1.7.9
+[0m10:59:08.403869 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt docs serve', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:59:08.587234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '908e4e8e-7b20-4d6c-a89d-dac40eb54241', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81E0C3620>]}
+[0m10:59:08.666411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '908e4e8e-7b20-4d6c-a89d-dac40eb54241', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81DA6FC80>]}
+[0m11:07:50.622643 [error] [MainThread]: Encountered an error:
+
+[0m11:07:50.687622 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 169, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 245, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\main.py", line 324, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\task\serve.py", line 28, in run
+    httpd.serve_forever()
+  File "C:\Users\benja\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\AppData\Local\Programs\Python\Python312\Lib\selectors.py", line 323, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\AppData\Local\Programs\Python\Python312\Lib\selectors.py", line 314, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m11:07:50.691311 [debug] [MainThread]: Command `dbt docs serve` failed at 11:07:50.691311 after 522.37 seconds
+[0m11:07:50.692344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81DABCDA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81DD42F60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E81E173E00>]}
+[0m11:07:50.692344 [debug] [MainThread]: Flushing usage events
+[0m11:42:03.034474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863345F40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863345F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863345CA0>]}
+
+
+============================== 11:42:03.038494 | 8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e ==============================
+[0m11:42:03.038494 [info ] [MainThread]: Running with dbt=1.7.9
+[0m11:42:03.039045 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:42:03.244465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863857A40>]}
+[0m11:42:03.324564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863446720>]}
+[0m11:42:03.326535 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m11:42:03.333042 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m11:42:03.403023 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 3 files changed.
+[0m11:42:03.403023 [debug] [MainThread]: Partial parsing: added file: db_quest://models\staging\store_id_description.md
+[0m11:42:03.404023 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\sources.yml
+[0m11:42:03.404023 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\stg_orders.yml
+[0m11:42:03.405025 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\stg_customers.yml
+[0m11:42:03.728555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F864D4FE30>]}
+[0m11:42:03.731116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8639C0800>]}
+[0m11:42:03.732091 [info ] [MainThread]: Found 9 tests, 2 models, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m11:42:03.732091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8639C0620>]}
+[0m11:42:03.734178 [info ] [MainThread]: 
+[0m11:42:03.735178 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m11:42:03.736181 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m11:42:03.744822 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m11:42:03.744822 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m11:42:03.745819 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:42:03.759175 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m11:42:03.759175 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m11:42:03.760119 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m11:42:03.761126 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m11:42:03.763639 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m11:42:03.763639 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m11:42:03.766430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8fb1a0e3-7e01-4ebd-8f7f-9a133a166b5e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863855CA0>]}
+[0m11:42:03.767431 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:42:03.767431 [info ] [MainThread]: 
+[0m11:42:03.772479 [debug] [Thread-1 (]: Began running node model.db_quest.stg_customers
+[0m11:42:03.772479 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.db_quest.stg_customers'
+[0m11:42:03.773455 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_customers
+[0m11:42:03.778827 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_customers"
+[0m11:42:03.780402 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (compile): 11:42:03.773455 => 11:42:03.779818
+[0m11:42:03.780402 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_customers
+[0m11:42:03.781327 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (execute): 11:42:03.780402 => 11:42:03.780402
+[0m11:42:03.781327 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_customers
+[0m11:42:03.782328 [debug] [Thread-1 (]: Began running node model.db_quest.stg_orders
+[0m11:42:03.782328 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_customers, now model.db_quest.stg_orders)
+[0m11:42:03.783329 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_orders
+[0m11:42:03.785327 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_orders"
+[0m11:42:03.786397 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (compile): 11:42:03.783329 => 11:42:03.786397
+[0m11:42:03.787327 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_orders
+[0m11:42:03.787327 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (execute): 11:42:03.787327 => 11:42:03.787327
+[0m11:42:03.788328 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_orders
+[0m11:42:03.789327 [debug] [Thread-1 (]: Began running node test.db_quest.order_dates_in_the_past
+[0m11:42:03.789327 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_orders, now test.db_quest.order_dates_in_the_past)
+[0m11:42:03.790673 [debug] [Thread-1 (]: Began compiling node test.db_quest.order_dates_in_the_past
+[0m11:42:03.791672 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.order_dates_in_the_past"
+[0m11:42:03.792671 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (compile): 11:42:03.790799 => 11:42:03.791672
+[0m11:42:03.792671 [debug] [Thread-1 (]: Began executing node test.db_quest.order_dates_in_the_past
+[0m11:42:03.792671 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (execute): 11:42:03.792671 => 11:42:03.792671
+[0m11:42:03.794179 [debug] [Thread-1 (]: Finished running node test.db_quest.order_dates_in_the_past
+[0m11:42:03.794715 [debug] [Thread-1 (]: Began running node test.db_quest.relation_via_customer_id
+[0m11:42:03.794715 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.order_dates_in_the_past, now test.db_quest.relation_via_customer_id)
+[0m11:42:03.795713 [debug] [Thread-1 (]: Began compiling node test.db_quest.relation_via_customer_id
+[0m11:42:03.796746 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.relation_via_customer_id"
+[0m11:42:03.797334 [debug] [Thread-1 (]: Timing info for test.db_quest.relation_via_customer_id (compile): 11:42:03.795713 => 11:42:03.796746
+[0m11:42:03.797334 [debug] [Thread-1 (]: Began executing node test.db_quest.relation_via_customer_id
+[0m11:42:03.797334 [debug] [Thread-1 (]: Timing info for test.db_quest.relation_via_customer_id (execute): 11:42:03.797334 => 11:42:03.797334
+[0m11:42:03.798286 [debug] [Thread-1 (]: Finished running node test.db_quest.relation_via_customer_id
+[0m11:42:03.799290 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:42:03.799290 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.relation_via_customer_id, now test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m11:42:03.799290 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:42:03.807286 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m11:42:03.808972 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (compile): 11:42:03.800257 => 11:42:03.808288
+[0m11:42:03.809047 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:42:03.809047 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (execute): 11:42:03.809047 => 11:42:03.809047
+[0m11:42:03.809973 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:42:03.810972 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m11:42:03.810972 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.db_quest.not_null_stg_customers_customer_name.5c92a78a60)
+[0m11:42:03.812280 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m11:42:03.815690 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_name.5c92a78a60"
+[0m11:42:03.816716 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (compile): 11:42:03.812280 => 11:42:03.815690
+[0m11:42:03.816716 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m11:42:03.816716 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (execute): 11:42:03.816716 => 11:42:03.816716
+[0m11:42:03.818053 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m11:42:03.818053 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m11:42:03.818970 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_name.5c92a78a60, now test.db_quest.unique_stg_customers_customer_id.c7614daada)
+[0m11:42:03.818970 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m11:42:03.824842 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_customers_customer_id.c7614daada"
+[0m11:42:03.825914 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (compile): 11:42:03.819970 => 11:42:03.825914
+[0m11:42:03.826449 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m11:42:03.826960 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (execute): 11:42:03.826449 => 11:42:03.826960
+[0m11:42:03.827958 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m11:42:03.827958 [debug] [Thread-1 (]: Began running node test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b
+[0m11:42:03.827958 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.unique_stg_customers_customer_id.c7614daada, now test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b)
+[0m11:42:03.829123 [debug] [Thread-1 (]: Began compiling node test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b
+[0m11:42:03.834032 [debug] [Thread-1 (]: Timing info for test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b (compile): 11:42:03.829123 => 11:42:03.834032
+[0m11:42:03.905285 [debug] [Thread-1 (]: Compilation Error in test dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models\staging\stg_orders.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m11:42:03.905285 [debug] [Thread-1 (]: Finished running node test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b
+[0m11:42:03.906201 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m11:42:03.906201 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b, now test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m11:42:03.907203 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m11:42:03.910568 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m11:42:03.912506 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (compile): 11:42:03.907203 => 11:42:03.911506
+[0m11:42:03.912506 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m11:42:03.913506 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (execute): 11:42:03.912506 => 11:42:03.912506
+[0m11:42:03.913506 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m11:42:03.914505 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:42:03.914505 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5, now test.db_quest.not_null_stg_orders_order_id.81cfe2fe64)
+[0m11:42:03.915579 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:42:03.918673 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_order_id.81cfe2fe64"
+[0m11:42:03.919863 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (compile): 11:42:03.915579 => 11:42:03.919671
+[0m11:42:03.919863 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:42:03.920671 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (execute): 11:42:03.919863 => 11:42:03.919863
+[0m11:42:03.920671 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:42:03.921670 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m11:42:03.921670 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_order_id.81cfe2fe64, now test.db_quest.unique_stg_orders_order_id.e3b841c71a)
+[0m11:42:03.922647 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m11:42:03.925671 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_orders_order_id.e3b841c71a"
+[0m11:42:03.927218 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_order_id.e3b841c71a (compile): 11:42:03.922647 => 11:42:03.926684
+[0m11:42:03.927218 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m11:42:03.927218 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_order_id.e3b841c71a (execute): 11:42:03.927218 => 11:42:03.927218
+[0m11:42:03.928245 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m11:42:03.929249 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:42:03.929848 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m11:42:03.929848 [debug] [MainThread]: Connection 'test.db_quest.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m11:42:03.929848 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Compilation Error in test dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models\staging\stg_orders.yml)
+    'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m11:42:03.931760 [debug] [MainThread]: Command `dbt docs generate` failed at 11:42:03.931760 after 1.02 seconds
+[0m11:42:03.931760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F863344200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F86318F830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8639C0920>]}
+[0m11:42:03.932761 [debug] [MainThread]: Flushing usage events
+[0m12:10:42.163314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022621E66F60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022621CAF2C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022621E65730>]}
+
+
+============================== 12:10:42.167297 | b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4 ==============================
+[0m12:10:42.167297 [info ] [MainThread]: Running with dbt=1.7.9
+[0m12:10:42.167297 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:10:42.358444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226219E6F90>]}
+[0m12:10:42.436875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022621EB6690>]}
+[0m12:10:42.437874 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m12:10:42.444953 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m12:10:42.512389 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:10:42.512389 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:10:42.517389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022621E64200>]}
+[0m12:10:42.519619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022622510830>]}
+[0m12:10:42.520573 [info ] [MainThread]: Found 9 tests, 2 models, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m12:10:42.520573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022622510650>]}
+[0m12:10:42.522572 [info ] [MainThread]: 
+[0m12:10:42.523941 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m12:10:42.524939 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m12:10:42.532883 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m12:10:42.533847 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m12:10:42.533847 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:10:42.547123 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:10:42.547123 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m12:10:42.548147 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m12:10:42.550124 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m12:10:42.551122 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m12:10:42.552125 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m12:10:42.554123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b679f5c9-3fd9-4ee5-810f-b34b62eaa2e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022622511E50>]}
+[0m12:10:42.555412 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:10:42.556368 [info ] [MainThread]: 
+[0m12:10:42.559422 [debug] [Thread-1 (]: Began running node model.db_quest.stg_customers
+[0m12:10:42.560367 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.db_quest.stg_customers'
+[0m12:10:42.560367 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_customers
+[0m12:10:42.568070 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_customers"
+[0m12:10:42.569071 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (compile): 12:10:42.560367 => 12:10:42.568070
+[0m12:10:42.569071 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_customers
+[0m12:10:42.569632 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (execute): 12:10:42.569632 => 12:10:42.569632
+[0m12:10:42.570582 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_customers
+[0m12:10:42.570582 [debug] [Thread-1 (]: Began running node model.db_quest.stg_orders
+[0m12:10:42.571775 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_customers, now model.db_quest.stg_orders)
+[0m12:10:42.571775 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_orders
+[0m12:10:42.574614 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_orders"
+[0m12:10:42.575200 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (compile): 12:10:42.571775 => 12:10:42.575200
+[0m12:10:42.575200 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_orders
+[0m12:10:42.576148 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (execute): 12:10:42.576148 => 12:10:42.576148
+[0m12:10:42.577148 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_orders
+[0m12:10:42.577148 [debug] [Thread-1 (]: Began running node test.db_quest.order_dates_in_the_past
+[0m12:10:42.578150 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_orders, now test.db_quest.order_dates_in_the_past)
+[0m12:10:42.578150 [debug] [Thread-1 (]: Began compiling node test.db_quest.order_dates_in_the_past
+[0m12:10:42.579690 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.order_dates_in_the_past"
+[0m12:10:42.580690 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (compile): 12:10:42.578690 => 12:10:42.579690
+[0m12:10:42.580690 [debug] [Thread-1 (]: Began executing node test.db_quest.order_dates_in_the_past
+[0m12:10:42.580690 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (execute): 12:10:42.580690 => 12:10:42.580690
+[0m12:10:42.581898 [debug] [Thread-1 (]: Finished running node test.db_quest.order_dates_in_the_past
+[0m12:10:42.582771 [debug] [Thread-1 (]: Began running node test.db_quest.relation_via_customer_id
+[0m12:10:42.582771 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.order_dates_in_the_past, now test.db_quest.relation_via_customer_id)
+[0m12:10:42.582771 [debug] [Thread-1 (]: Began compiling node test.db_quest.relation_via_customer_id
+[0m12:10:42.584761 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.relation_via_customer_id"
+[0m12:10:42.585378 [debug] [Thread-1 (]: Timing info for test.db_quest.relation_via_customer_id (compile): 12:10:42.583759 => 12:10:42.584761
+[0m12:10:42.585378 [debug] [Thread-1 (]: Began executing node test.db_quest.relation_via_customer_id
+[0m12:10:42.585378 [debug] [Thread-1 (]: Timing info for test.db_quest.relation_via_customer_id (execute): 12:10:42.585378 => 12:10:42.585378
+[0m12:10:42.586303 [debug] [Thread-1 (]: Finished running node test.db_quest.relation_via_customer_id
+[0m12:10:42.587302 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:10:42.587302 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.relation_via_customer_id, now test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m12:10:42.588015 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:10:42.598441 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m12:10:42.599619 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (compile): 12:10:42.588524 => 12:10:42.599619
+[0m12:10:42.600416 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:10:42.600416 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (execute): 12:10:42.600416 => 12:10:42.600416
+[0m12:10:42.601416 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:10:42.601416 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:10:42.602416 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.db_quest.not_null_stg_customers_customer_name.5c92a78a60)
+[0m12:10:42.602416 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:10:42.605999 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_name.5c92a78a60"
+[0m12:10:42.607359 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (compile): 12:10:42.603441 => 12:10:42.607359
+[0m12:10:42.607359 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:10:42.608294 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (execute): 12:10:42.608294 => 12:10:42.608294
+[0m12:10:42.609292 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:10:42.609292 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:10:42.610292 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_name.5c92a78a60, now test.db_quest.unique_stg_customers_customer_id.c7614daada)
+[0m12:10:42.610292 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:10:42.615877 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_customers_customer_id.c7614daada"
+[0m12:10:42.616903 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (compile): 12:10:42.610824 => 12:10:42.616903
+[0m12:10:42.618008 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:10:42.618089 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (execute): 12:10:42.618089 => 12:10:42.618089
+[0m12:10:42.619008 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:10:42.619008 [debug] [Thread-1 (]: Began running node test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b
+[0m12:10:42.620031 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.unique_stg_customers_customer_id.c7614daada, now test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b)
+[0m12:10:42.620031 [debug] [Thread-1 (]: Began compiling node test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b
+[0m12:10:42.626161 [debug] [Thread-1 (]: Timing info for test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b (compile): 12:10:42.621008 => 12:10:42.626161
+[0m12:10:42.629547 [debug] [Thread-1 (]: Compilation Error in test dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models\staging\stg_orders.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m12:10:42.630576 [debug] [Thread-1 (]: Finished running node test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b
+[0m12:10:42.630576 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:10:42.631113 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.eb7d53552b, now test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m12:10:42.632645 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:10:42.635893 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m12:10:42.636808 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (compile): 12:10:42.632645 => 12:10:42.636808
+[0m12:10:42.636808 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:10:42.637808 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (execute): 12:10:42.637808 => 12:10:42.637808
+[0m12:10:42.638810 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:10:42.638810 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:10:42.639410 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5, now test.db_quest.not_null_stg_orders_order_id.81cfe2fe64)
+[0m12:10:42.639410 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:10:42.643377 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_order_id.81cfe2fe64"
+[0m12:10:42.643911 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (compile): 12:10:42.639410 => 12:10:42.643911
+[0m12:10:42.644911 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:10:42.644911 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (execute): 12:10:42.644911 => 12:10:42.644911
+[0m12:10:42.645936 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:10:42.645936 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:10:42.646938 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_order_id.81cfe2fe64, now test.db_quest.unique_stg_orders_order_id.e3b841c71a)
+[0m12:10:42.646938 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:10:42.649486 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_orders_order_id.e3b841c71a"
+[0m12:10:42.651010 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_order_id.e3b841c71a (compile): 12:10:42.646938 => 12:10:42.651010
+[0m12:10:42.651920 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:10:42.651920 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_order_id.e3b841c71a (execute): 12:10:42.651920 => 12:10:42.651920
+[0m12:10:42.652948 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:10:42.652948 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:10:42.652948 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m12:10:42.654333 [debug] [MainThread]: Connection 'test.db_quest.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m12:10:42.654333 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Compilation Error in test dbt_utils_relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ (models\staging\stg_orders.yml)
+    'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m12:10:42.656182 [debug] [MainThread]: Command `dbt docs generate` failed at 12:10:42.656182 after 0.61 seconds
+[0m12:10:42.656182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022621BBB9E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226223A7830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002262231C6B0>]}
+[0m12:10:42.657182 [debug] [MainThread]: Flushing usage events
+[0m12:15:47.344008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE0BB6180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE0BB4650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE0BB4230>]}
+
+
+============================== 12:15:47.347185 | 6b61ce57-b489-4556-bf9b-7de2bc55caa1 ==============================
+[0m12:15:47.347185 [info ] [MainThread]: Running with dbt=1.7.9
+[0m12:15:47.348754 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt docs generate', 'send_anonymous_usage_stats': 'True'}
+[0m12:15:47.534379 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6b61ce57-b489-4556-bf9b-7de2bc55caa1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE1007B30>]}
+[0m12:15:47.613478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6b61ce57-b489-4556-bf9b-7de2bc55caa1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE0CCE390>]}
+[0m12:15:47.614450 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m12:15:47.621847 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m12:15:47.682078 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 0 files added, 1 files changed.
+[0m12:15:47.683080 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\stg_orders.yml
+[0m12:15:47.683622 [debug] [MainThread]: Partial parsing: deleted file: db_quest://tests\relation_via_customer_id.sql
+[0m12:15:47.937628 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Documentation for 'model.db_quest.stg_orders' depends on doc 'store_id_description'  which was not found
+[0m12:15:47.938629 [debug] [MainThread]: Command `dbt docs generate` failed at 12:15:47.938629 after 0.71 seconds
+[0m12:15:47.938629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE00F9430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE0B7DEE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAE114E3F0>]}
+[0m12:15:47.939653 [debug] [MainThread]: Flushing usage events
+[0m12:24:39.870718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018100CD2360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018100CD1A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018100CD10D0>]}
+
+
+============================== 12:24:39.875279 | 8ca4660b-0b3a-4a79-a909-9c0bad310fc0 ==============================
+[0m12:24:39.875279 [info ] [MainThread]: Running with dbt=1.7.9
+[0m12:24:39.875279 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:24:40.074219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8ca4660b-0b3a-4a79-a909-9c0bad310fc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018100D01D30>]}
+[0m12:24:40.153939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8ca4660b-0b3a-4a79-a909-9c0bad310fc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018100856F90>]}
+[0m12:24:40.154965 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m12:24:40.163269 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m12:24:40.220290 [debug] [MainThread]: Partial parsing enabled: 2 files deleted, 1 files added, 1 files changed.
+[0m12:24:40.220290 [debug] [MainThread]: Partial parsing: added file: db_quest://models\store_id_description.md
+[0m12:24:40.221318 [debug] [MainThread]: Partial parsing: updated file: db_quest://models\staging\stg_orders.yml
+[0m12:24:40.221318 [debug] [MainThread]: Partial parsing: deleted file: db_quest://tests\relation_via_customer_id.sql
+[0m12:24:40.221318 [debug] [MainThread]: Partial parsing: deleted file: db_quest://models\staging\store_id_description.md
+[0m12:24:40.482027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8ca4660b-0b3a-4a79-a909-9c0bad310fc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018101606330>]}
+[0m12:24:40.484006 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8ca4660b-0b3a-4a79-a909-9c0bad310fc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000181013C4800>]}
+[0m12:24:40.485032 [info ] [MainThread]: Found 9 tests, 2 models, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m12:24:40.485032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ca4660b-0b3a-4a79-a909-9c0bad310fc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018102624E90>]}
+[0m12:24:40.487035 [info ] [MainThread]: 
+[0m12:24:40.487572 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m12:24:40.488742 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m12:24:40.497672 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m12:24:40.497672 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m12:24:40.497672 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:24:40.509983 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:24:40.511019 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m12:24:40.511019 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m12:24:40.512984 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m12:24:40.513984 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m12:24:40.514984 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m12:24:40.517984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ca4660b-0b3a-4a79-a909-9c0bad310fc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018101255BB0>]}
+[0m12:24:40.518986 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:24:40.520002 [info ] [MainThread]: 
+[0m12:24:40.522202 [debug] [Thread-1 (]: Began running node model.db_quest.stg_customers
+[0m12:24:40.523226 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.db_quest.stg_customers'
+[0m12:24:40.523226 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_customers
+[0m12:24:40.529854 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_customers"
+[0m12:24:40.530973 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (compile): 12:24:40.524230 => 12:24:40.530451
+[0m12:24:40.530973 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_customers
+[0m12:24:40.530973 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_customers (execute): 12:24:40.530973 => 12:24:40.530973
+[0m12:24:40.531989 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_customers
+[0m12:24:40.532991 [debug] [Thread-1 (]: Began running node model.db_quest.stg_orders
+[0m12:24:40.532991 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_customers, now model.db_quest.stg_orders)
+[0m12:24:40.533991 [debug] [Thread-1 (]: Began compiling node model.db_quest.stg_orders
+[0m12:24:40.535611 [debug] [Thread-1 (]: Writing injected SQL for node "model.db_quest.stg_orders"
+[0m12:24:40.537531 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (compile): 12:24:40.533991 => 12:24:40.536530
+[0m12:24:40.537531 [debug] [Thread-1 (]: Began executing node model.db_quest.stg_orders
+[0m12:24:40.537531 [debug] [Thread-1 (]: Timing info for model.db_quest.stg_orders (execute): 12:24:40.537531 => 12:24:40.537531
+[0m12:24:40.538559 [debug] [Thread-1 (]: Finished running node model.db_quest.stg_orders
+[0m12:24:40.539530 [debug] [Thread-1 (]: Began running node test.db_quest.order_dates_in_the_past
+[0m12:24:40.540529 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.db_quest.stg_orders, now test.db_quest.order_dates_in_the_past)
+[0m12:24:40.540759 [debug] [Thread-1 (]: Began compiling node test.db_quest.order_dates_in_the_past
+[0m12:24:40.541712 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.order_dates_in_the_past"
+[0m12:24:40.542711 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (compile): 12:24:40.540759 => 12:24:40.541712
+[0m12:24:40.542711 [debug] [Thread-1 (]: Began executing node test.db_quest.order_dates_in_the_past
+[0m12:24:40.542711 [debug] [Thread-1 (]: Timing info for test.db_quest.order_dates_in_the_past (execute): 12:24:40.542711 => 12:24:40.542711
+[0m12:24:40.543712 [debug] [Thread-1 (]: Finished running node test.db_quest.order_dates_in_the_past
+[0m12:24:40.544854 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:24:40.544854 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.order_dates_in_the_past, now test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m12:24:40.544854 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:24:40.553053 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m12:24:40.554137 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (compile): 12:24:40.545885 => 12:24:40.554137
+[0m12:24:40.555055 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:24:40.555055 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa (execute): 12:24:40.555055 => 12:24:40.555055
+[0m12:24:40.556082 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m12:24:40.556082 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:24:40.557094 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.db_quest.not_null_stg_customers_customer_name.5c92a78a60)
+[0m12:24:40.557727 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:24:40.561633 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_customers_customer_name.5c92a78a60"
+[0m12:24:40.562649 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (compile): 12:24:40.557727 => 12:24:40.561633
+[0m12:24:40.563194 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:24:40.563283 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_customers_customer_name.5c92a78a60 (execute): 12:24:40.563283 => 12:24:40.563283
+[0m12:24:40.564221 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_customers_customer_name.5c92a78a60
+[0m12:24:40.564221 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:24:40.565221 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_customers_customer_name.5c92a78a60, now test.db_quest.unique_stg_customers_customer_id.c7614daada)
+[0m12:24:40.565221 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:24:40.571855 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_customers_customer_id.c7614daada"
+[0m12:24:40.571936 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (compile): 12:24:40.565221 => 12:24:40.571936
+[0m12:24:40.572883 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:24:40.572883 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_customers_customer_id.c7614daada (execute): 12:24:40.572883 => 12:24:40.572883
+[0m12:24:40.573854 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_customers_customer_id.c7614daada
+[0m12:24:40.573854 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:24:40.574853 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.unique_stg_customers_customer_id.c7614daada, now test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m12:24:40.574853 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:24:40.579364 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m12:24:40.580365 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (compile): 12:24:40.575854 => 12:24:40.579364
+[0m12:24:40.580365 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:24:40.580879 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5 (execute): 12:24:40.580879 => 12:24:40.580879
+[0m12:24:40.581907 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5
+[0m12:24:40.581907 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:24:40.582910 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_customer_id.af79d5e4b5, now test.db_quest.not_null_stg_orders_order_id.81cfe2fe64)
+[0m12:24:40.583452 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:24:40.586993 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_order_id.81cfe2fe64"
+[0m12:24:40.587505 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (compile): 12:24:40.583530 => 12:24:40.587505
+[0m12:24:40.588503 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:24:40.588503 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_order_id.81cfe2fe64 (execute): 12:24:40.588503 => 12:24:40.588503
+[0m12:24:40.589533 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_order_id.81cfe2fe64
+[0m12:24:40.589533 [debug] [Thread-1 (]: Began running node test.db_quest.not_null_stg_orders_store_id.63158da3bf
+[0m12:24:40.590502 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_order_id.81cfe2fe64, now test.db_quest.not_null_stg_orders_store_id.63158da3bf)
+[0m12:24:40.591044 [debug] [Thread-1 (]: Began compiling node test.db_quest.not_null_stg_orders_store_id.63158da3bf
+[0m12:24:40.594631 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.not_null_stg_orders_store_id.63158da3bf"
+[0m12:24:40.595620 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_store_id.63158da3bf (compile): 12:24:40.591044 => 12:24:40.594631
+[0m12:24:40.595620 [debug] [Thread-1 (]: Began executing node test.db_quest.not_null_stg_orders_store_id.63158da3bf
+[0m12:24:40.595620 [debug] [Thread-1 (]: Timing info for test.db_quest.not_null_stg_orders_store_id.63158da3bf (execute): 12:24:40.595620 => 12:24:40.595620
+[0m12:24:40.596653 [debug] [Thread-1 (]: Finished running node test.db_quest.not_null_stg_orders_store_id.63158da3bf
+[0m12:24:40.597657 [debug] [Thread-1 (]: Began running node test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5
+[0m12:24:40.597657 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.not_null_stg_orders_store_id.63158da3bf, now test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5)
+[0m12:24:40.597657 [debug] [Thread-1 (]: Began compiling node test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5
+[0m12:24:40.602198 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5"
+[0m12:24:40.603348 [debug] [Thread-1 (]: Timing info for test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5 (compile): 12:24:40.598652 => 12:24:40.603348
+[0m12:24:40.603348 [debug] [Thread-1 (]: Began executing node test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5
+[0m12:24:40.604229 [debug] [Thread-1 (]: Timing info for test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5 (execute): 12:24:40.603348 => 12:24:40.603348
+[0m12:24:40.605229 [debug] [Thread-1 (]: Finished running node test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5
+[0m12:24:40.605229 [debug] [Thread-1 (]: Began running node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:24:40.606103 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.db_quest.relationships_stg_orders_customer_id__ref_stg_customers_.b8a8ce04d5, now test.db_quest.unique_stg_orders_order_id.e3b841c71a)
+[0m12:24:40.606644 [debug] [Thread-1 (]: Began compiling node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:24:40.610048 [debug] [Thread-1 (]: Writing injected SQL for node "test.db_quest.unique_stg_orders_order_id.e3b841c71a"
+[0m12:24:40.611081 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_order_id.e3b841c71a (compile): 12:24:40.606644 => 12:24:40.610048
+[0m12:24:40.611081 [debug] [Thread-1 (]: Began executing node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:24:40.611081 [debug] [Thread-1 (]: Timing info for test.db_quest.unique_stg_orders_order_id.e3b841c71a (execute): 12:24:40.611081 => 12:24:40.611081
+[0m12:24:40.612075 [debug] [Thread-1 (]: Finished running node test.db_quest.unique_stg_orders_order_id.e3b841c71a
+[0m12:24:40.613243 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:24:40.613923 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m12:24:40.613923 [debug] [MainThread]: Connection 'test.db_quest.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m12:24:40.616058 [debug] [MainThread]: Command end result
+[0m12:24:40.624264 [debug] [MainThread]: Acquiring new mysql connection 'generate_catalog'
+[0m12:24:40.625263 [info ] [MainThread]: Building catalog
+[0m12:24:40.626811 [debug] [ThreadPool]: Acquiring new mysql connection 'my_dbt_db'
+[0m12:24:40.627804 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`my_first_dbt_model`
+[0m12:24:40.632374 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.632998 [debug] [ThreadPool]: On my_dbt_db: BEGIN
+[0m12:24:40.632998 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:24:40.638620 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:24:40.638620 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.638620 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.my_first_dbt_model
+    
+[0m12:24:40.640530 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:24:40.643932 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`my_second_dbt_model`
+[0m12:24:40.645958 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.645958 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.my_second_dbt_model
+    
+[0m12:24:40.646933 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:24:40.648050 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_customers`
+[0m12:24:40.650001 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.650001 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_customers
+    
+[0m12:24:40.652008 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m12:24:40.652973 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_items`
+[0m12:24:40.654972 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.656005 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_items
+    
+[0m12:24:40.657601 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m12:24:40.658516 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_orders`
+[0m12:24:40.660546 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.661088 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_orders
+    
+[0m12:24:40.662119 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.0 seconds
+[0m12:24:40.663200 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_products`
+[0m12:24:40.665152 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.665152 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_products
+    
+[0m12:24:40.666161 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m12:24:40.668103 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_stores`
+[0m12:24:40.669674 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.669674 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_stores
+    
+[0m12:24:40.671688 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.0 seconds
+[0m12:24:40.672674 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`raw_supplies`
+[0m12:24:40.674299 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.674299 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.raw_supplies
+    
+[0m12:24:40.675215 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m12:24:40.676248 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`stg_customers`
+[0m12:24:40.677963 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.678784 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.stg_customers
+    
+[0m12:24:40.679785 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m12:24:40.680785 [debug] [ThreadPool]: mysql adapter: Getting table schema for relation `my_dbt_db`.`stg_orders`
+[0m12:24:40.682842 [debug] [ThreadPool]: Using mysql connection "my_dbt_db"
+[0m12:24:40.682842 [debug] [ThreadPool]: On my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "my_dbt_db"} */
+
+        show columns from my_dbt_db.stg_orders
+    
+[0m12:24:40.684113 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m12:24:40.687087 [debug] [ThreadPool]: On my_dbt_db: ROLLBACK
+[0m12:24:40.687627 [debug] [ThreadPool]: On my_dbt_db: Close
+[0m12:24:40.696084 [info ] [MainThread]: Catalog written to C:\Users\benja\WCS\WCS_DBT_quests\db_quest\target\catalog.json
+[0m12:24:40.697115 [debug] [MainThread]: Command `dbt docs generate` succeeded at 12:24:40.696084 after 0.95 seconds
+[0m12:24:40.697115 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m12:24:40.697115 [debug] [MainThread]: Connection 'my_dbt_db' was properly closed.
+[0m12:24:40.698142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018100706E40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001810277B770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000181026925A0>]}
+[0m12:24:40.698142 [debug] [MainThread]: Flushing usage events
+[0m12:25:09.569859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FBA671A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FBA664E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FBA65F10>]}
+
+
+============================== 12:25:09.573859 | 9da39e41-0710-4c12-9c4a-8f8f779b1680 ==============================
+[0m12:25:09.573859 [info ] [MainThread]: Running with dbt=1.7.9
+[0m12:25:09.574860 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt docs serve', 'send_anonymous_usage_stats': 'True'}
+[0m12:25:09.777558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9da39e41-0710-4c12-9c4a-8f8f779b1680', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FBA65F10>]}
+[0m12:25:09.858450 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9da39e41-0710-4c12-9c4a-8f8f779b1680', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FB9260C0>]}
+[0m12:25:34.493735 [error] [MainThread]: Encountered an error:
+
+[0m12:25:34.507309 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 169, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\requires.py", line 245, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\cli\main.py", line 324, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\benja\WCS\WCS_DBT_quests\my-dbt-env\Lib\site-packages\dbt\task\serve.py", line 28, in run
+    httpd.serve_forever()
+  File "C:\Users\benja\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\AppData\Local\Programs\Python\Python312\Lib\selectors.py", line 323, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\benja\AppData\Local\Programs\Python\Python312\Lib\selectors.py", line 314, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m12:25:34.517788 [debug] [MainThread]: Command `dbt docs serve` failed at 12:25:34.516763 after 25.04 seconds
+[0m12:25:34.517788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FBC6BFE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FB8FD460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7FBF17140>]}
+[0m12:25:34.518787 [debug] [MainThread]: Flushing usage events
+[0m12:27:55.362760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE935B4380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE924289E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE935B5070>]}
+
+
+============================== 12:27:55.366762 | 4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05 ==============================
+[0m12:27:55.366762 [info ] [MainThread]: Running with dbt=1.7.9
+[0m12:27:55.367295 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\benja\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\benja\\WCS\\WCS_DBT_quests\\db_quest\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:27:55.557685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE935E5A60>]}
+[0m12:27:55.639410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE93608E90>]}
+[0m12:27:55.640919 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m12:27:55.647941 [debug] [MainThread]: checksum: 6ff0d83c3b46f350064523b4e08d9241403ad71d606ba49c4e670afba3668b39, vars: {}, profile: , target: , version: 1.7.9
+[0m12:27:55.713089 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m12:27:55.713089 [debug] [MainThread]: Partial parsing: added file: db_quest://seeds\customer_status.csv
+[0m12:27:55.814625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE93BD37A0>]}
+[0m12:27:55.824168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE93CA19D0>]}
+[0m12:27:55.824709 [info ] [MainThread]: Found 9 tests, 2 models, 1 seed, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m12:27:55.824779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE93E16B40>]}
+[0m12:27:55.826736 [info ] [MainThread]: 
+[0m12:27:55.827707 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m12:27:55.828300 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m12:27:55.836908 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m12:27:55.836908 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m12:27:55.837912 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:27:55.851535 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.0 seconds
+[0m12:27:55.852558 [debug] [ThreadPool]: On list_schemas: Close
+[0m12:27:55.853575 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_my_dbt_db'
+[0m12:27:55.858587 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m12:27:55.858587 [debug] [ThreadPool]: On list_None_my_dbt_db: BEGIN
+[0m12:27:55.859586 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:27:55.864762 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:55.864762 [debug] [ThreadPool]: Using mysql connection "list_None_my_dbt_db"
+[0m12:27:55.864762 [debug] [ThreadPool]: On list_None_my_dbt_db: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "connection_name": "list_None_my_dbt_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'my_dbt_db'
+  
+[0m12:27:55.866695 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m12:27:55.867696 [debug] [ThreadPool]: On list_None_my_dbt_db: ROLLBACK
+[0m12:27:55.868697 [debug] [ThreadPool]: On list_None_my_dbt_db: Close
+[0m12:27:55.871314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE9300C170>]}
+[0m12:27:55.872280 [debug] [MainThread]: Using mysql connection "master"
+[0m12:27:55.872280 [debug] [MainThread]: On master: BEGIN
+[0m12:27:55.872280 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:27:55.877813 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:55.877813 [debug] [MainThread]: On master: COMMIT
+[0m12:27:55.877813 [debug] [MainThread]: Using mysql connection "master"
+[0m12:27:55.878817 [debug] [MainThread]: On master: COMMIT
+[0m12:27:55.878817 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:55.879791 [debug] [MainThread]: On master: Close
+[0m12:27:55.880357 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:27:55.880357 [info ] [MainThread]: 
+[0m12:27:55.883301 [debug] [Thread-1 (]: Began running node seed.db_quest.customer_status
+[0m12:27:55.884326 [info ] [Thread-1 (]: 1 of 1 START seed file my_dbt_db.customer_status ............................... [RUN]
+[0m12:27:55.885301 [debug] [Thread-1 (]: Acquiring new mysql connection 'seed.db_quest.customer_status'
+[0m12:27:55.885301 [debug] [Thread-1 (]: Began compiling node seed.db_quest.customer_status
+[0m12:27:55.886301 [debug] [Thread-1 (]: Timing info for seed.db_quest.customer_status (compile): 12:27:55.885301 => 12:27:55.885301
+[0m12:27:55.886301 [debug] [Thread-1 (]: Began executing node seed.db_quest.customer_status
+[0m12:27:55.910029 [debug] [Thread-1 (]: Using mysql connection "seed.db_quest.customer_status"
+[0m12:27:55.911067 [debug] [Thread-1 (]: On seed.db_quest.customer_status: BEGIN
+[0m12:27:55.911142 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m12:27:55.916677 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:55.916677 [debug] [Thread-1 (]: Using mysql connection "seed.db_quest.customer_status"
+[0m12:27:55.917609 [debug] [Thread-1 (]: On seed.db_quest.customer_status: /* {"app": "dbt", "dbt_version": "1.7.9", "profile_name": "db_quest", "target_name": "dev", "node_id": "seed.db_quest.customer_status"} */
+
+    create table `my_dbt_db`.`customer_status` (`customer_status` text,`min_order_count` integer,`max_order_count` integer)
+  
+[0m12:27:55.965773 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:55.981162 [debug] [Thread-1 (]: Using mysql connection "seed.db_quest.customer_status"
+[0m12:27:55.981852 [debug] [Thread-1 (]: On seed.db_quest.customer_status: 
+          insert into `my_dbt_db`.`customer_status` (`customer_status`, `min_order_count`, `max_order_count`) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      ...
+[0m12:27:55.983388 [debug] [Thread-1 (]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m12:27:55.988616 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.db_quest.customer_status"
+[0m12:27:56.005001 [debug] [Thread-1 (]: On seed.db_quest.customer_status: COMMIT
+[0m12:27:56.005001 [debug] [Thread-1 (]: Using mysql connection "seed.db_quest.customer_status"
+[0m12:27:56.006002 [debug] [Thread-1 (]: On seed.db_quest.customer_status: COMMIT
+[0m12:27:56.007970 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:56.009000 [debug] [Thread-1 (]: Timing info for seed.db_quest.customer_status (execute): 12:27:55.886301 => 12:27:56.009000
+[0m12:27:56.009999 [debug] [Thread-1 (]: On seed.db_quest.customer_status: Close
+[0m12:27:56.009999 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4afb5c8e-dc9d-4bb5-94e4-2fd9945d6b05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE93C54AA0>]}
+[0m12:27:56.010999 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file my_dbt_db.customer_status ........................... [[32mINSERT 3[0m in 0.13s]
+[0m12:27:56.011970 [debug] [Thread-1 (]: Finished running node seed.db_quest.customer_status
+[0m12:27:56.012970 [debug] [MainThread]: Using mysql connection "master"
+[0m12:27:56.012970 [debug] [MainThread]: On master: BEGIN
+[0m12:27:56.014104 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:27:56.018635 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:56.019222 [debug] [MainThread]: On master: COMMIT
+[0m12:27:56.019222 [debug] [MainThread]: Using mysql connection "master"
+[0m12:27:56.019222 [debug] [MainThread]: On master: COMMIT
+[0m12:27:56.020173 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m12:27:56.020173 [debug] [MainThread]: On master: Close
+[0m12:27:56.021146 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:27:56.021146 [debug] [MainThread]: Connection 'list_schemas' was properly closed.
+[0m12:27:56.021146 [debug] [MainThread]: Connection 'list_None_my_dbt_db' was properly closed.
+[0m12:27:56.022173 [debug] [MainThread]: Connection 'seed.db_quest.customer_status' was properly closed.
+[0m12:27:56.022173 [info ] [MainThread]: 
+[0m12:27:56.022710 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m12:27:56.023710 [debug] [MainThread]: Command end result
+[0m12:27:56.030907 [info ] [MainThread]: 
+[0m12:27:56.030907 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:27:56.031907 [info ] [MainThread]: 
+[0m12:27:56.032957 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m12:27:56.033494 [debug] [MainThread]: Command `dbt seed` succeeded at 12:27:56.033494 after 0.79 seconds
+[0m12:27:56.033494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE933B3020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE935B4E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE933FCDA0>]}
+[0m12:27:56.034492 [debug] [MainThread]: Flushing usage events
